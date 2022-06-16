@@ -1,21 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bookers2</title>
+  <header>
+    <script src="https://kit.fontawesome.com/471de70e77.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/"><span>Bookers</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li>
+            <a class="nav-link text-light" href="/">
+            <i class="fas fa-home"></i>  Home
+            </a> </li>
+            <li>
+            <a class="nav-link text-light" href="/home/about">
+            <i class="fas fa-link"></i>  About
+            </a>
+            </li>
+            <li>
+            <a class="nav-link text-light" href="/users/sign_up">
+            <i class="fas fa-user-plus"></i>  Sign up
+            </a></li>
+            <li>
+            <a class="nav-link text-light" href="/users/sign_in">
+            <i class="fas fa-sign-in-alt"></i>  Log in
+           </a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ </header>
+
+  <head>
+    <title>Bookers2</title>
+    
   </head>
 
+  <body>
+  <header>
   <% if user_signed_in? %>
   <li>
     <%= link_to '投稿フォーム', new_post_image_path %>
   </li>
   <li>
-  <%= link_to 'マイページ', user_path(current_user.id) %>
+   <%= link_to 'マイページ', user_path(current_user.id) %>
   </li>
   <li>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -28,9 +64,22 @@
     <%= link_to "ログイン", new_user_session_path %>
   </li>
   <% end %>
-  <!--投稿フォーム ログアウト 新規登録 ログインを追記した 6/12 16:22-->
-  <!--マイページを追記した 6/12 20:09-->
-  <body>
+  </header>
     <%= yield %>
   </body>
+  <li class="container mt-5">
+  	<li class="row">
+    	<li class="mx-auto">
+    		<li>CopyRight Infratop.inc</li>
+    	</li>
+    </li>
+  </li>
 </html>
+
+<!--投稿フォーム ログアウト 新規登録 ログインを追記した 6/12 16:22-->
+<!--マイページを追記した 6/12 20:09-->
+<!--10行目 link~packに変更した 6/13 18:22-->
+<!--36~42行目を追記した 6/15 20:11-->
+<!--投稿フォーム ログアウト 新規登録 ログインをbody headerで囲んだ 6/15 20:26-->
+<!--3~41行目をBookers2sampleからheaderをコピペした 6/15 20:56-->
+<!--fontawesomeを追記した 6/16 19:52-->

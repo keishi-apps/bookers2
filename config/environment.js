@@ -1,7 +1,3 @@
-const { environment } = require('@rails/webpacker')
-
-module.exports = environment
-
 const webpack = require('webpack')
 environment.plugins.prepend(
   'Provide',
@@ -12,4 +8,4 @@ environment.plugins.prepend(
   })
 )
 
-// Bootstrapを導入する記述を書いた 6/16 19:56
+// 追記した 6/13 18:13

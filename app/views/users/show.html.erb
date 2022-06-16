@@ -1,10 +1,7 @@
-<!-- ユーザーの詳細 更新 6/12 20:02-->
 <div>
   <h3><%= XXX.name %></h3>
   <%= image_tag XXX.get_profile_image(100,100) %>
 </div>
-
-<!-- ユーザーの投稿一覧 更新 6/12 20:02-->
 
 <% @post_images.each do |post_image| %>
 <div>
@@ -17,3 +14,6 @@
   <p>ユーザーネーム：<%= post_image.user.name %></p>
 </div>
 <% end %>
+
+<!-- ユーザーの詳細 更新 6/12 20:02-->
+<!-- ユーザーの投稿一覧 更新 6/12 20:02-->
